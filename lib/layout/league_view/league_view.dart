@@ -39,53 +39,50 @@ class LeagueViewState extends State<LeagueView> {
     return BlocBuilder<LeagueCubit, LeagueState>(
       bloc: cubit,
       builder: (BuildContext context, Object? state) {
-        return Directionality(
-          textDirection: TextDirection.rtl,
-          child: Scaffold(
-            backgroundColor: HexColor('#202124'),
-          appBar:cubit.selectedItem!=0? AppBar(
-            backgroundColor:HexColor('#202124') ,
+        return Scaffold(
+          backgroundColor: HexColor('#202124'),
+        appBar:cubit.selectedItem!=0? AppBar(
+          backgroundColor:HexColor('#202124') ,
+          elevation: 0,
+          automaticallyImplyLeading:false,
+
+          title: Text('${cubit.titles[cubit.selectedItem]}',
+            style: TextStyle(color: Colors.white,
+              fontSize: 20,
+              shadows: [
+                Shadow(
+                  color: Colors
+                      .purple, // Change to the desired purple color
+                  offset: Offset(2,
+                      1),
+                  blurRadius:
+                  2,
+                ),
+              ]),)
+          ,):null,
+
+        body: cubit.pages.elementAt(cubit.selectedItem),
+                bottomNavigationBar: SnakeNavigationBar.color(
+                snakeViewColor: Colors.purple.shade100,
+                unselectedItemColor: Colors.purple.shade100,
+                 snakeShape:SnakeShape.indicator,
+        behaviour:SnakeBarBehaviour.floating ,
+            backgroundColor:HexColor('#202124'),
+            showUnselectedLabels: true,
+            showSelectedLabels: true,
             elevation: 0,
-            automaticallyImplyLeading:false,
+            currentIndex: cubit.selectedItem,
+            onTap: (index) {
+              cubit.onTap(index);
+            },
+            items: [
+            BottomNavigationBarItem(icon: Icon(Icons.tab,), label: 'statistics'),
+            BottomNavigationBarItem(icon: Icon(Icons.compare), label: 'Standings'),
+            BottomNavigationBarItem(icon: Icon(Icons.score), label: 'Top scorer '),
 
-            title: Text('${cubit.titles[cubit.selectedItem]}',
-              style: TextStyle(color: Colors.white,
-                fontSize: 20,
-                shadows: [
-                  Shadow(
-                    color: Colors
-                        .purple, // Change to the desired purple color
-                    offset: Offset(2,
-                        1),
-                    blurRadius:
-                    2,
-                  ),
-                ]),)
-            ,):null,
+                ],
 
-          body: cubit.pages.elementAt(cubit.selectedItem),
-        bottomNavigationBar: SnakeNavigationBar.color(
-        snakeViewColor: Colors.purple.shade100,
-        unselectedItemColor: Colors.purple.shade100,
-         snakeShape:SnakeShape.indicator,
-          behaviour:SnakeBarBehaviour.floating ,
-              backgroundColor:HexColor('#202124'),
-              showUnselectedLabels: true,
-              showSelectedLabels: true,
-              elevation: 0,
-              currentIndex: cubit.selectedItem,
-              onTap: (index) {
-                cubit.onTap(index);
-              },
-              items: [
-              BottomNavigationBarItem(icon: Icon(Icons.tab,), label: 'الاحصائيات'),
-              BottomNavigationBarItem(icon: Icon(Icons.compare), label: 'الترتيب'),
-              BottomNavigationBarItem(icon: Icon(Icons.score), label: 'الهدافين'),
-
-        ],
-
-          ),
-          )
+        ),
         );
       },
     );

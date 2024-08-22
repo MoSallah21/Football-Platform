@@ -32,231 +32,228 @@ class _LiveMatchDetailsState extends State<LiveMatchDetails>
         cubit.tabController =
             TabController(length: 3, vsync: this, initialIndex: cubit.tabIndex);
 
-        return Directionality(
-          textDirection: TextDirection.rtl,
-          child: Scaffold(
-              backgroundColor: HexColor('#202124'),
-              body: SafeArea(
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      // padding: EdgeInsets.all(10),
-                      height: 215,
-                      margin: const EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: const Color.fromARGB(255, 50, 6, 56),
-                        gradient: const LinearGradient(
-                            colors: [Color(0xFF42275a), Color(0xFF734b6d)]),
-                      ),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            widget.fixd.fixture.venue.name,
-                            style:  TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                  color: Colors
-                                      .purpleAccent.shade100, // Change to the desired purple color
-                                  offset: Offset(1,
-                                      1), // Adjust the offset based on your preference
-                                  blurRadius:
-                                  1, // Adjust the blur radius based on your preference
-                                ),
-                              ],
-                            ),
-                          ),
-                          Text(
-                            widget.fixd.fixture.venue.city,
-                            style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 15,
-                                ),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                              "الجولة - " +
-                                  widget.fixd.league.round.substring(17),
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 15,)),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Expanded(
-                              child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              Column(
-                                children: [
-                                  Image.network(
-                                    widget.fixd.teams.home.logo,
-                                    width: 75,
-                                  ),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text(widget.fixd.teams.home.name,
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 10,
-
-                                          fontWeight: FontWeight.bold)),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text('مستضيف',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 10,shadows: [
-                                        Shadow(
-                                          color: Colors
-                                              .purpleAccent.shade100, // Change to the desired purple color
-                                          offset: Offset(1,
-                                              1), // Adjust the offset based on your preference
-                                          blurRadius:
-                                          1, // Adjust the blur radius based on your preference
-                                        ),
-                                      ],)),
-                                ],
-                              ),
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                      widget.fixd.goals.away.toString() +
-                                          ":" +
-                                          widget.fixd.goals.home.toString(),
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 30,
-                                          fontWeight: FontWeight.bold)),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Container(
-                                    padding: EdgeInsets.all(4),
-                                    decoration: BoxDecoration(
-                                      border:
-                                          Border.all(color: Color(0xffFE2B84)),
-                                      borderRadius: BorderRadius.circular(5),
-                                      //color: Color(0xffFE2B84).withOpacity(0.5),
-                                    ),
-                                    child: Center(
-                                      child: Text(
-                                          widget.fixd.fixture.statue.elapsed
-                                                  .toString() +
-                                              '\'',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold)),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              Column(
-                                children: [
-                                  Image.network(
-                                    widget.fixd.teams.away.logo,
-                                    width: 75,
-                                  ),
-                                  SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(widget.fixd.teams.away.name,
-                                      style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.bold)),
-                                  SizedBox(
-                                    height: 5,
-                                  ),
-                                  Text('ضيف',
-                                      style: TextStyle(
-                                          color: Colors.white, fontSize: 10,shadows: [
-                                        Shadow(
-                                          color: Colors
-                                              .purpleAccent.shade100, // Change to the desired purple color
-                                          offset: Offset(1,
-                                              1), // Adjust the offset based on your preference
-                                          blurRadius:
-                                          1, // Adjust the blur radius based on your preference
-                                        ),
-                                      ],)),
-                                ],
-                              ),
-                            ],
-                          ))
-                        ],
-                      ),
+        return Scaffold(
+            backgroundColor: HexColor('#202124'),
+            body: SafeArea(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    // padding: EdgeInsets.all(10),
+                    height: 215,
+                    margin: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: const Color.fromARGB(255, 50, 6, 56),
+                      gradient: const LinearGradient(
+                          colors: [Color(0xFF42275a), Color(0xFF734b6d)]),
                     ),
-                    Expanded(
-                        child: Container(
-                      padding: EdgeInsets.all(10),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        //color: Colors.deepPurple
-                      ),
-                      child: Column(children: [
-                        Container(
-                          width: double.maxFinite,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.grey,
-                          ),
-                          child: TabBar(
-                              controller: cubit.tabController,
-                              isScrollable: false,
-                              labelStyle: TextStyle(color:Colors.white,shadows: [
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          widget.fixd.fixture.venue.name,
+                          style:  TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            shadows: [
                               Shadow(
-                              color: Colors
-                                  .purpleAccent.shade100, // Change to the desired purple color
+                                color: Colors
+                                    .purpleAccent.shade100, // Change to the desired purple color
                                 offset: Offset(1,
                                     1), // Adjust the offset based on your preference
                                 blurRadius:
                                 1, // Adjust the blur radius based on your preference
                               ),
-                              ] ),
-                              automaticIndicatorColorAdjustment: false,
-                              unselectedLabelStyle:TextStyle(color:Colors.black,) ,
-                              indicator: BoxDecoration(
-                                color: Colors.purple.shade500,
-                                borderRadius: BorderRadius.circular(10),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          widget.fixd.fixture.venue.city,
+                          style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 15,
                               ),
-                              tabs: [
-                                Tab(text: "احداث"),
-                                Tab(text: "احصائيات"),
-                                Tab(text: "تشكيلة الفريقين")
-                              ]),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                            "Round - " +
+                                widget.fixd.league.round.substring(17),
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 15,)),
+                        SizedBox(
+                          height: 10,
                         ),
                         Expanded(
-                          child: TabBarView(
-                              controller: cubit.tabController,
+                            child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Column(
                               children: [
-                                summaryWidget(),
-                                statsWidget(),
-                                lineUpWidget(),
-                              ]),
-                        )
-                      ]),
-                    ))
-                  ],
-                ),
-              )),
-        );
+                                Image.network(
+                                  widget.fixd.teams.home.logo,
+                                  width: 75,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text(widget.fixd.teams.home.name,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 10,
+
+                                        fontWeight: FontWeight.bold)),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text('Home',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10,shadows: [
+                                      Shadow(
+                                        color: Colors
+                                            .purpleAccent.shade100, // Change to the desired purple color
+                                        offset: Offset(1,
+                                            1), // Adjust the offset based on your preference
+                                        blurRadius:
+                                        1, // Adjust the blur radius based on your preference
+                                      ),
+                                    ],)),
+                              ],
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                    widget.fixd.goals.away.toString() +
+                                        ":" +
+                                        widget.fixd.goals.home.toString(),
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 30,
+                                        fontWeight: FontWeight.bold)),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Container(
+                                  padding: EdgeInsets.all(4),
+                                  decoration: BoxDecoration(
+                                    border:
+                                        Border.all(color: Color(0xffFE2B84)),
+                                    borderRadius: BorderRadius.circular(5),
+                                    //color: Color(0xffFE2B84).withOpacity(0.5),
+                                  ),
+                                  child: Center(
+                                    child: Text(
+                                        widget.fixd.fixture.statue.elapsed
+                                                .toString() +
+                                            '\'',
+                                        style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 15,
+                                            fontWeight: FontWeight.bold)),
+                                  ),
+                                )
+                              ],
+                            ),
+                            Column(
+                              children: [
+                                Image.network(
+                                  widget.fixd.teams.away.logo,
+                                  width: 75,
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(widget.fixd.teams.away.name,
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 10,
+                                        fontWeight: FontWeight.bold)),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                Text('Away',
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 10,shadows: [
+                                      Shadow(
+                                        color: Colors
+                                            .purpleAccent.shade100, // Change to the desired purple color
+                                        offset: Offset(1,
+                                            1), // Adjust the offset based on your preference
+                                        blurRadius:
+                                        1, // Adjust the blur radius based on your preference
+                                      ),
+                                    ],)),
+                              ],
+                            ),
+                          ],
+                        ))
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                      child: Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      //color: Colors.deepPurple
+                    ),
+                    child: Column(children: [
+                      Container(
+                        width: double.maxFinite,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.grey,
+                        ),
+                        child: TabBar(
+                            controller: cubit.tabController,
+                            isScrollable: false,
+                            labelStyle: TextStyle(color:Colors.white,shadows: [
+                            Shadow(
+                            color: Colors
+                                .purpleAccent.shade100, // Change to the desired purple color
+                              offset: Offset(1,
+                                  1), // Adjust the offset based on your preference
+                              blurRadius:
+                              1, // Adjust the blur radius based on your preference
+                            ),
+                            ] ),
+                            automaticIndicatorColorAdjustment: false,
+                            unselectedLabelStyle:TextStyle(color:Colors.black,) ,
+                            indicator: BoxDecoration(
+                              color: Colors.purple.shade500,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            tabs: [
+                              Tab(text: "Events"),
+                              Tab(text: "Statistics"),
+                              Tab(text: "Plan")
+                            ]),
+                      ),
+                      Expanded(
+                        child: TabBarView(
+                            controller: cubit.tabController,
+                            children: [
+                              summaryWidget(),
+                              statsWidget(),
+                              lineUpWidget(),
+                            ]),
+                      )
+                    ]),
+                  ))
+                ],
+              ),
+            ));
       },
     );
   }
@@ -269,7 +266,7 @@ class _LiveMatchDetailsState extends State<LiveMatchDetails>
         : cubit.lmd.allEvent.isEmpty
             ? Center(
                 child: Text(
-                  "لايوجد احداث بعد",
+                  "Not yet",
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
               )
@@ -349,7 +346,7 @@ class _LiveMatchDetailsState extends State<LiveMatchDetails>
             SizedBox(
               height: 30,
               child: Center(
-                child: Text("المدرب",
+                child: Text("Coach",
                     style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,shadows: [
                       Shadow(
                         color: Colors

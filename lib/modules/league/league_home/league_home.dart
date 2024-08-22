@@ -17,11 +17,11 @@ class HomeLeague extends StatelessWidget {
         var cubit = LeagueCubit.get(context);
         List<String> codes = ['39', '140', '135', '78', '61'];
         List<String> titles = [
-          'الانكليزي الممتاز',
-          'الاسباني',
-          'الايطالي',
-          'الالماني',
-          'الفرنسي'
+          'Premier League',
+          'LaLiga',
+          'Serie A',
+          'Bundesliga',
+          'Ligue 1'
         ];
         List<String> paths = [
           'assets/images/pre.png',
@@ -30,49 +30,46 @@ class HomeLeague extends StatelessWidget {
           'assets/images/bundesliga.png',
           'assets/images/Ligue1.png'
         ];
-        return Directionality(
-          textDirection: TextDirection.rtl,
-          child: Scaffold(
-            backgroundColor: Colors.transparent,
-            body: BackGround(
-              img: 2,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5.0,vertical: 50),
-                child: Column(
-                  children: [
-                    Text('الدوريات الاروبية',style: TextStyle(color: Colors.white,
-                        fontSize: 20,
-                        shadows: [
-                          Shadow(
-                            color: Colors
-                                .purple, // Change to the desired purple color
-                            offset: Offset(2,
-                                1), // Adjust the offset based on your preference
-                            blurRadius:
-                            2, // Adjust the blur radius based on your preference
-                          ),
-                        ])),
-                    Expanded(
-                      child: GridView.count(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: 20.0,
-                        crossAxisSpacing: 1.0,
-                        children: List.generate(titles.length, (index) {
-                          return buildGrid(
-                              cubit, index, context, titles, paths, codes);
-                        }),
-                        shrinkWrap: false,
-                        physics: BouncingScrollPhysics(),
-                      ),
+        return Scaffold(
+          backgroundColor: Colors.transparent,
+          body: BackGround(
+            img: 2,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5.0,vertical: 50),
+              child: Column(
+                children: [
+                  Text('European Leagues',style: TextStyle(color: Colors.white,
+                      fontSize: 20,
+                      shadows: [
+                        Shadow(
+                          color: Colors
+                              .purple, // Change to the desired purple color
+                          offset: Offset(2,
+                              1), // Adjust the offset based on your preference
+                          blurRadius:
+                          2, // Adjust the blur radius based on your preference
+                        ),
+                      ])),
+                  Expanded(
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 20.0,
+                      crossAxisSpacing: 1.0,
+                      children: List.generate(titles.length, (index) {
+                        return buildGrid(
+                            cubit, index, context, titles, paths, codes);
+                      }),
+                      shrinkWrap: false,
+                      physics: BouncingScrollPhysics(),
                     ),
-                  ],
-                ),
-              ).asGlass(
-                enabled: true,
-                tintColor: Colors.transparent,
-                clipBorderRadius: BorderRadius.circular(15.0),
-
+                  ),
+                ],
               ),
+            ).asGlass(
+              enabled: true,
+              tintColor: Colors.transparent,
+              clipBorderRadius: BorderRadius.circular(15.0),
+
             ),
           ),
         );

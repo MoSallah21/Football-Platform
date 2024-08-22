@@ -34,7 +34,7 @@ class _AllMatchesState extends State<AllMatches> {
             appBar: AppBar(
               backgroundColor: HexColor('#202124'),
               elevation: 0.0,
-              title:  Text('كل مبارايات الدوري',style:TextStyle(color: Colors.purple.shade200),),
+              title:  Text('All Matches',style:TextStyle(color: Colors.purple.shade200),),
             ),
             backgroundColor: HexColor('#202124'),
             body: cubit.allMatches.isEmpty

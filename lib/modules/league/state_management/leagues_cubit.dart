@@ -20,7 +20,7 @@ class LeagueCubit extends Cubit<LeagueState> {
     selectedItem = idx;
     emit(ChangeSelectedIndex());
   }
-  List<String>titles=['','ترتيب الدوري','هدافي الدوري 2023/2024'];
+  List<String>titles=['','Standings','Top Scorer 2023/2024'];
   late String league;
   List<Widget> pages = [];
 //table logic

@@ -18,10 +18,10 @@ class HomeScreen extends StatelessWidget {
       builder: (BuildContext context, Object? state) {
         var cubit=LeagueCubit.get(context);
         List<String> titles=[
-          'الدوريات',
-          'توقع نتيجة المباراة',
-          'عن كرة قدم',
-          'لوحة التكتيكات',
+          'Leagues',
+          'Prediction Of Premier League Match',
+          'About Football',
+          'Tactics board',
         ];
         List<String> images=[
           'assets/images/league.png',
@@ -35,51 +35,48 @@ class HomeScreen extends StatelessWidget {
           AboutFootBallScreen(),
           Board()
         ];
-        return Directionality(
-          textDirection: TextDirection.rtl,
-          child: Scaffold(
-            body: SizedBox.expand(
-              child: BackGround(
-                img: 0,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 15),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 40,top: 50),
-                        child: Text('المنصة الذكية لكرة القدم',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 25,
-                            shadows: [
-                              Shadow(
-                                color: Colors
-                                    .purple, // Change to the desired purple color
-                                offset: Offset(2,
-                                    1), // Adjust the offset based on your preference
-                                blurRadius:
-                                2, // Adjust the blur radius based on your preference
-                              ),
-                            ],
-                          ),
+        return Scaffold(
+          body: SizedBox.expand(
+            child: BackGround(
+              img: 0,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0,vertical: 15),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40,top: 50),
+                      child: Text('Mo Football Platform',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 25,
+                          shadows: [
+                            Shadow(
+                              color: Colors
+                                  .purple, // Change to the desired purple color
+                              offset: Offset(2,
+                                  1), // Adjust the offset based on your preference
+                              blurRadius:
+                              2, // Adjust the blur radius based on your preference
+                            ),
+                          ],
                         ),
                       ),
-                Expanded(
-                  child: GridView.count(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: 30.0,
-                    crossAxisSpacing: 15.0,
-                    children: List.generate(
-                        titles.length, (index) {
-                      return buildGrid(cubit, index, context, titles, images, pages);
-                    }),
-                    shrinkWrap: false,
-                    physics: BouncingScrollPhysics(),
-                  ),
+                    ),
+              Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 30.0,
+                  crossAxisSpacing: 15.0,
+                  children: List.generate(
+                      titles.length, (index) {
+                    return buildGrid(cubit, index, context, titles, images, pages);
+                  }),
+                  shrinkWrap: false,
+                  physics: BouncingScrollPhysics(),
                 ),
-                    ],
-                  ),
+              ),
+                  ],
                 ),
               ),
             ),
