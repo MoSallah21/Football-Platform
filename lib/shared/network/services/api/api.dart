@@ -8,7 +8,6 @@ import 'package:http/http.dart' as http;
 class Api {
   static final headers = {
     'x-rapidapi-host': "v3.football.api-sports.io",
-    'x-rapidapi-key': "eb46070093fa26915792ffc3ee302dd4",
   };
 
   static Future<List<TableData>> getLeagueTable(String league) async {
