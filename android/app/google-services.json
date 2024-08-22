@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1080766889099",
+    "project_id": "football-platform-eddc3",
+    "storage_bucket": "football-platform-eddc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1080766889099:android:3d2342fe8787bdb473a88e",
+        "android_client_info": {
+          "package_name": "com.mosallah.football_platform"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1K0Tq_MvKAPx9A6I93Rf5pyS9F74ZpfI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
