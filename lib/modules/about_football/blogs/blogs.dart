@@ -28,7 +28,7 @@ class BlogsScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      'مقالات كرة قدم',
+                      'Football Blogs',
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 25,

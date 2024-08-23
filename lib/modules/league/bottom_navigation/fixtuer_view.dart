@@ -40,7 +40,7 @@ class FixturesViewState extends State<FixturesView> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                          "مباريات تلعب الان",
+                          "Matches Play Now",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 30,
@@ -62,12 +62,12 @@ class FixturesViewState extends State<FixturesView> {
                           width: MediaQuery.of(context).size.width,
                           child: cubit.upcomingMatches.isEmpty
                               ? Center(
-                                  child: Text("لايوجد مباريات تلعب الان",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),),
+                                  child: Text("No Matches Now",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 24,color: Colors.white),),
                                 )
                               : cubit.liveMatches.isEmpty
                                   ? Center(
                                       child: const Text(
-                                        "لايوجد مباريات الان",
+                                        "Playing Now",
                                         style: TextStyle(
                                         color: Colors.white,
                                         fontWeight: FontWeight.w100,
@@ -104,7 +104,7 @@ class FixturesViewState extends State<FixturesView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "المباريات القادمة",
+                              "Outcoming Matches",
                               style: TextStyle(
                                 fontSize: 25,
                                   color: Colors.white,
@@ -126,7 +126,7 @@ class FixturesViewState extends State<FixturesView> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "مشاهدة الكل",
+                                    "See All",
                                     style: TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -163,7 +163,7 @@ class FixturesViewState extends State<FixturesView> {
                       ),
                       Expanded(
                           child: cubit.upcomingMatches.isEmpty
-                              ? const Center(child: Text("لايوجد مباريات قادمة",style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.bold),))
+                              ? const Center(child: Text("No Next Matches",style: TextStyle(color: Colors.white,fontSize: 26,fontWeight: FontWeight.bold),))
                               : ListView.builder(
                                   shrinkWrap: true,
                                   physics: BouncingScrollPhysics(),
@@ -212,7 +212,7 @@ class FixturesViewState extends State<FixturesView> {
             SizedBox(
               height: 10,
             ),
-            Text("الجولة - " + fixed.league.round.substring(17),
+            Text("Round -" + fixed.league.round.substring(17),
                 style: TextStyle(color: Colors.white, fontSize: 12)),
             SizedBox(
               height: 10,
@@ -241,7 +241,7 @@ class FixturesViewState extends State<FixturesView> {
                     SizedBox(
                       height: 5,
                     ),
-                    Text('مضيف',
+                    Text('Home',
                         style: TextStyle(color: Colors.white, fontSize: 10)),
                   ],
                 ),
@@ -301,7 +301,7 @@ class FixturesViewState extends State<FixturesView> {
                     SizedBox(
                       height: 5,
                     ),
-                    Text('ضيف',
+                    Text('Away',
                         style: TextStyle(color: Colors.white, fontSize: 10)),
                   ],
                 ),

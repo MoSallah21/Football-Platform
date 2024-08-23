@@ -76,7 +76,7 @@ class LeagueViewState extends State<LeagueView> {
               cubit.onTap(index);
             },
             items: [
-            BottomNavigationBarItem(icon: Icon(Icons.tab,), label: 'statistics'),
+            BottomNavigationBarItem(icon: Icon(Icons.tab,), label: 'Statistics'),
             BottomNavigationBarItem(icon: Icon(Icons.compare), label: 'Standings'),
             BottomNavigationBarItem(icon: Icon(Icons.score), label: 'Top scorer '),
 
