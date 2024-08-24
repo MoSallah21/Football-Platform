@@ -28,27 +28,24 @@ class _AllMatchesState extends State<AllMatches> {
     return BlocBuilder<LeagueCubit, LeagueState>(
       bloc: cubit,
       builder: (BuildContext context, Object? state) {
-        return Directionality(
-          textDirection: TextDirection.rtl,
-          child: Scaffold(
-            appBar: AppBar(
-              backgroundColor: HexColor('#202124'),
-              elevation: 0.0,
-              title:  Text('All Matches',style:TextStyle(color: Colors.purple.shade200),),
-            ),
+        return Scaffold(
+          appBar: AppBar(
             backgroundColor: HexColor('#202124'),
-            body: cubit.allMatches.isEmpty
-                ? const Center(
-                    child: CircularProgressIndicator(color: Colors.purple),
-                  )
-                : ListView.builder(
-                    itemCount: cubit.allMatches.length,
-                    physics: BouncingScrollPhysics(),
-                    itemBuilder: (BuildContext context, int index) {
-                      return tileBuilder(cubit.allMatches[index]);
-                    },
-                  ),
+            elevation: 0.0,
+            title:  Text('All Matches',style:TextStyle(color: Colors.purple.shade200),),
           ),
+          backgroundColor: HexColor('#202124'),
+          body: cubit.allMatches.isEmpty
+              ? const Center(
+                  child: CircularProgressIndicator(color: Colors.purple),
+                )
+              : ListView.builder(
+                  itemCount: cubit.allMatches.length,
+                  physics: BouncingScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return tileBuilder(cubit.allMatches[index]);
+                  },
+                ),
         );
       },
     );

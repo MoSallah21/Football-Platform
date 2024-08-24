@@ -118,7 +118,7 @@ class _ShootsScreenState extends State<ShootsScreen> {
                     ),
                     Padding(
                       padding: const EdgeInsets.symmetric(vertical: 25.0),
-                      child: Text('ماهو عدد التسديدات التي تتوقعها لكل من الفريقين ؟',style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.w700,
+                      child: Text('How many shots do you expect for each team?',style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.w700,
                         shadows: [
                           Shadow(
                             color: Colors
@@ -195,7 +195,7 @@ class _ShootsScreenState extends State<ShootsScreen> {
                                 ),
                               ),
                               SizedBox(height: 2,),
-                              Text('مضيف',style: TextStyle(color: Colors.white,shadows: [
+                              Text('Home',style: TextStyle(color: Colors.white,shadows: [
                                 Shadow(
                                   color: Colors
                                       .purpleAccent.shade100,
@@ -285,11 +285,11 @@ class _ShootsScreenState extends State<ShootsScreen> {
                               Container(
                                 padding: EdgeInsets.only(top: 124), // Add padding here
                                 child: Text(
-                                  'الكلي',
+                                  'Total',
                                   style: TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold),
                                 ),
                               ),                              SizedBox(height: 50,),
-                              Text('على المرمى',style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
+                              Text('On goal',style: TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.bold),),
 
                             ],
                           ),
@@ -303,7 +303,7 @@ class _ShootsScreenState extends State<ShootsScreen> {
                                 ),
                               ),
                               SizedBox(height: 2,),
-                              Text('ضيف',style: TextStyle(color: Colors.white,shadows: [
+                              Text('Away',style: TextStyle(color: Colors.white,shadows: [
                                 Shadow(
                                   color: Colors
                                       .purpleAccent.shade100,
@@ -441,7 +441,7 @@ class _ShootsScreenState extends State<ShootsScreen> {
                       if(homeShootsController.text==''||homeShootsOnController.text=='' || awayShootsController.text==''|| awayShootsOnController.text=='')
                             {
                               ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                content: Text('يرجى ادخال كافة القيم لكلا فريقين لتوقع النتيجة بينهما'),
+                                content: Text('Please enter all values for each team to predict the outcome between them.'),
                                 duration: Duration(seconds: 3),
                               ),);
 
@@ -449,7 +449,7 @@ class _ShootsScreenState extends State<ShootsScreen> {
                       else if(double.parse(homeShootsController.text)>34||double.parse(awayShootsController.text)>32 ||double.parse(homeShootsController.text)<1||double.parse(awayShootsController.text)<1)
                       {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text('قيم التسديدات هي قيم غير واقعية يرجى التعديل بما يتناسب مع الواقع'),
+                          content: Text('The payment values fpr not realistic values, please adjust them according to reality.'),
                           duration: Duration(seconds: 3),
                         ),);
 
@@ -457,7 +457,7 @@ class _ShootsScreenState extends State<ShootsScreen> {
                       else if(double.parse(homeShootsController.text)<double.parse(homeShootsOnController.text) || double.parse(awayShootsController.text)<double.parse(awayShootsOnController.text))
                       {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text('لايمكن ان يكون عدد التسديدات الكلي اقل من عدد التسديدات على المرمى'),
+                          content: Text('The total number of shots cannot be less than the number of shots on goal'),
                           duration: Duration(seconds: 3),
                         ),);
                       }

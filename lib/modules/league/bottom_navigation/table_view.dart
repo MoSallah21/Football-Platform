@@ -43,7 +43,7 @@ class _TableViewState extends State<TableView> {
                                 width: 40,
                                 child: Center(
                                     child: Text(
-                                  'مركز',
+                                  'Pos',
                                   style: TextStyle(
                                     color: Color(0xFFeb67e5),
                                     shadows: [
@@ -62,7 +62,7 @@ class _TableViewState extends State<TableView> {
                                 width: 150,
                                 child: Center(
                                     child: Text(
-                                  'نادي',
+                                  'Club',
                                   style: TextStyle(
                                     color: Color(0xFFeb67e5),
                                     shadows: [
@@ -81,7 +81,7 @@ class _TableViewState extends State<TableView> {
                                 width: 40,
                                 child: Center(
                                     child: Text(
-                                  'لعب',
+                                  'MP',
                                   style: TextStyle(
                                     color: Color(0xFFeb67e5),
                                     shadows: [
@@ -100,7 +100,7 @@ class _TableViewState extends State<TableView> {
                                 width: 40,
                                 child: Center(
                                     child: Text(
-                                  'فارق',
+                                  'GD',
                                   style: TextStyle(
                                     color: Color(0xFFeb67e5),
                                     shadows: [
@@ -122,7 +122,7 @@ class _TableViewState extends State<TableView> {
                                 width: 40,
                                 child: Center(
                                     child: Text(
-                                  'نقاط',
+                                  'Pts',
                                   style: TextStyle(
                                     color: Color(0xFFeb67e5),
 

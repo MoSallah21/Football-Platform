@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_platform/models/question_model/model.dart';
 import 'package:football_platform/modules/about_football/quiz/choose_level/choose_level.dart';
 import 'package:football_platform/modules/about_football/quiz/correct_answers_screen/correct_answers.dart';
-import 'package:football_platform/modules/about_football/quiz/questions_screen/quiz_screen.dart';
 import 'package:football_platform/modules/about_football/state_management/about_cubit.dart';
 import 'package:football_platform/modules/about_football/state_management/about_state.dart';
 import 'package:football_platform/modules/home/home_screen.dart';
@@ -35,7 +34,7 @@ class ResultScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('النتيجة : $score/${questions.length}',
+                      Text('Result : $score/${questions.length}',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 40,
@@ -52,20 +51,20 @@ class ResultScreen extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 40,),
-                      actionButton(title: 'العب مجددا',
+                      actionButton(title: 'Play again',
                           buttonColor: Colors.purple,
 
                           onTap: (){
                             navigateTo(context, ChooseLevel());
                           }),
                       SizedBox(height: 15,),
-                      actionButton(title: 'الاجابات الصحيحة',
+                      actionButton(title: 'Correct Answers',
                           buttonColor: Colors.purple,
                           onTap: (){
                             navigateTo(context, CorrectAnswer(questions: questions));
                           }),
                       SizedBox(height: 15,),
-                      actionButton(title: 'القائمة الرئيسية',
+                      actionButton(title: 'Home',
                           buttonColor: Colors.purple,
 
                           onTap: (){

@@ -54,103 +54,100 @@ int time=0;
          bloc: cubit,
          builder: (BuildContext context, Object? state) {
            final currentQuestions = widget.questions[cubit.currentIndex];
-           return Directionality(
-             textDirection: TextDirection.rtl,
-             child: Scaffold(
-               body: BackGround(
-                   img: 1,
-                   child:Padding(
-                       padding: const EdgeInsets.all(10.0),
-                     child: Column(
-                       crossAxisAlignment: CrossAxisAlignment.start,
-                       children: [
-                         SizedBox(height: 40,),
-                         SizedBox(
-                           height: 40,
-                           child: ClipRRect(
-                             borderRadius: BorderRadius.circular(20),
-                             child: Stack(
-                               fit: StackFit.expand,
-                               children: [
-                                 Directionality(
-                                   textDirection: TextDirection.ltr,
-                                   child: LinearProgressIndicator(
-                                     color: HexColor('#202124'),
-                                     backgroundColor: Colors.purple,
-                                     value: cubit.currentTime/time,
-                                   ),
+           return Scaffold(
+             body: BackGround(
+                 img: 1,
+                 child:Padding(
+                     padding: const EdgeInsets.all(10.0),
+                   child: Column(
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       SizedBox(height: 40,),
+                       SizedBox(
+                         height: 40,
+                         child: ClipRRect(
+                           borderRadius: BorderRadius.circular(20),
+                           child: Stack(
+                             fit: StackFit.expand,
+                             children: [
+                               Directionality(
+                                 textDirection: TextDirection.ltr,
+                                 child: LinearProgressIndicator(
+                                   color: HexColor('#202124'),
+                                   backgroundColor: Colors.purple,
+                                   value: cubit.currentTime/time,
                                  ),
-                                 Center(
-                                   child: Text(cubit.currentTime.toString(),
-                                   style: TextStyle(color:Colors.white,
-                                   fontWeight: FontWeight.bold,
-                                     fontSize: 20,
-                                   ),),
-                                 ),
-                               ],
-                             ),
+                               ),
+                               Center(
+                                 child: Text(cubit.currentTime.toString(),
+                                 style: TextStyle(color:Colors.white,
+                                 fontWeight: FontWeight.bold,
+                                   fontSize: 20,
+                                 ),),
+                               ),
+                             ],
                            ),
                          ),
-                         SizedBox(height: 40,),
-                         Text('السؤال :',
-                           style: TextStyle(
-                               color: Colors.white,
-                               fontWeight: FontWeight.bold,
-                               fontSize: 24,
-                               shadows: [
-                                 Shadow(
-                                   color: Colors
-                                       .purple, // Change to the desired purple color
-                                   offset: Offset(1,
-                                       1), // Adjust the offset based on your preference
-                                   blurRadius:
-                                   5, // Adjust the blur radius based on your preference
-                                 ),
-                               ]
-                           ),
-
-                         ),
-                         SizedBox(height: 10,),
-                         Text(currentQuestions.question,
+                       ),
+                       SizedBox(height: 40,),
+                       Text('Question :',
                          style: TextStyle(
                              color: Colors.white,
+                             fontWeight: FontWeight.bold,
                              fontSize: 24,
+                             shadows: [
+                               Shadow(
+                                 color: Colors
+                                     .purple, // Change to the desired purple color
+                                 offset: Offset(1,
+                                     1), // Adjust the offset based on your preference
+                                 blurRadius:
+                                 5, // Adjust the blur radius based on your preference
+                               ),
+                             ]
                          ),
-                         ),
-                         Expanded(
-                           child: ListView.builder(
-                               itemBuilder: (BuildContext context,int index)
-                           {
-                             final answer=currentQuestions.answers![index];
-                             return AnswerTile(
-                                 isSelected: answer == cubit.selectedAnswer,
-                                 answer: answer,
-                                 correctAnswer: currentQuestions.correctAnswer ,
-                                 onTap:(){
-                                   cubit.selectAnswer(answer);
-                                   if(answer==currentQuestions.correctAnswer){
-                                     cubit.score++;
-                                   }
-                                   Future.delayed(Duration(milliseconds: 400 ),
-                                       (){
-                                     if(cubit.currentIndex==widget.questions.length-1)
-                                       navigateAndFinish(context, ResultScreen(
-                                         questions: widget.questions,
-                                         score: cubit.score,
-                                       ));
-                                     cubit.nextQuestion();
-                                       }
-                                   );
+
+                       ),
+                       SizedBox(height: 10,),
+                       Text(currentQuestions.question,
+                       style: TextStyle(
+                           color: Colors.white,
+                           fontSize: 24,
+                       ),
+                       ),
+                       Expanded(
+                         child: ListView.builder(
+                             itemBuilder: (BuildContext context,int index)
+                         {
+                           final answer=currentQuestions.answers![index];
+                           return AnswerTile(
+                               isSelected: answer == cubit.selectedAnswer,
+                               answer: answer,
+                               correctAnswer: currentQuestions.correctAnswer ,
+                               onTap:(){
+                                 cubit.selectAnswer(answer);
+                                 if(answer==currentQuestions.correctAnswer){
+                                   cubit.score++;
                                  }
-                             );
-                           },
-                             itemCount: currentQuestions.answers!.length,
-                           ),
+                                 Future.delayed(Duration(milliseconds: 400 ),
+                                     (){
+                                   if(cubit.currentIndex==widget.questions.length-1)
+                                     navigateAndFinish(context, ResultScreen(
+                                       questions: widget.questions,
+                                       score: cubit.score,
+                                     ));
+                                   cubit.nextQuestion();
+                                     }
+                                 );
+                               }
+                           );
+                         },
+                           itemCount: currentQuestions.answers!.length,
                          ),
-                       ],
-                     ),
+                       ),
+                     ],
                    ),
-               ),
+                 ),
              ),
            );
          },

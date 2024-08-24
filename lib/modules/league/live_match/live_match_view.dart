@@ -237,7 +237,7 @@ class _LiveMatchDetailsState extends State<LiveMatchDetails>
                             tabs: [
                               Tab(text: "Events"),
                               Tab(text: "Statistics"),
-                              Tab(text: "Plan")
+                              Tab(text: "lineUp")
                             ]),
                       ),
                       Expanded(
@@ -423,7 +423,7 @@ class _LiveMatchDetailsState extends State<LiveMatchDetails>
             SizedBox(
               height: 30,
               child: Center(
-                child: Text("تشكيلة لعب",
+                child: Text("lineUp",
                     style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,shadows: [
                       Shadow(
                         color: Colors
@@ -475,7 +475,7 @@ class _LiveMatchDetailsState extends State<LiveMatchDetails>
             SizedBox(
               height: 30,
               child: Center(
-                child: Text("الاعبين الاساسين",
+                child: Text("Main",
                     style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white,shadows: [
                       Shadow(
                         color: Colors
@@ -583,7 +583,7 @@ class _LiveMatchDetailsState extends State<LiveMatchDetails>
              SizedBox(
               height: 30,
               child: Center(
-                child: Text("الاعبين البدلاء",
+                child: Text("Rev",
                     style: TextStyle(fontWeight: FontWeight.bold,color: Colors.grey,shadows: [
                       ],)),
               ),

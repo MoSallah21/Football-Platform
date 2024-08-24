@@ -20,7 +20,7 @@ class QuizHome extends StatelessWidget {
     listener: (BuildContext context, state) {  },
     builder: (BuildContext context, Object? state) {
       List<Text> levels=[
-        Text('سهل',
+        Text('Easy',
           style: TextStyle(
             color: Colors.white,
             fontSize: 40,
@@ -36,7 +36,7 @@ class QuizHome extends StatelessWidget {
             ],
           ),
         ),
-        Text('متوسط',
+        Text('Medium',
           style: TextStyle(
             color: Colors.white,
             fontSize: 40,
@@ -52,7 +52,7 @@ class QuizHome extends StatelessWidget {
             ],
           ),
       ),
-        Text('صعب',
+        Text('Hard',
           style: TextStyle(
             color: Colors.white,
             fontSize: 40,
@@ -70,99 +70,96 @@ class QuizHome extends StatelessWidget {
         ),
       ];
      var cubit=AboutCubit.get(context);
-      return Directionality(
-        textDirection: TextDirection.rtl,
-        child: Scaffold(
-          backgroundColor: HexColor('#202124'),
-          body: BackGround(
-            img: 1,
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 120.0),
-                child: Column(
-                  children: [
-                    Text('لعبة اسئلة واجوبة',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 40,
-                        shadows: [
-                          Shadow(
-                            color: Colors
-                                .purple, // Change to the desired purple color
-                            offset: Offset(2,
-                                1), // Adjust the offset based on your preference
-                            blurRadius:
-                            2, // Adjust the blur radius based on your preference
-                          ),
-                        ],
-                      ),
+      return Scaffold(
+        backgroundColor: HexColor('#202124'),
+        body: BackGround(
+          img: 1,
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 120.0),
+              child: Column(
+                children: [
+                  Text('Q/A Game',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                      shadows: [
+                        Shadow(
+                          color: Colors
+                              .purple, // Change to the desired purple color
+                          offset: Offset(2,
+                              1), // Adjust the offset based on your preference
+                          blurRadius:
+                          2, // Adjust the blur radius based on your preference
+                        ),
+                      ],
                     ),
-                    if(level==1)
+                  ),
+                  if(level==1)
                     levels[0],
-                    if(level==2)
-                      levels[1],
-                    if(level==3)
-                      levels[2],
-                    SizedBox(height: 40,),
-                    StreamBuilder<List<QuestionModel>>(
-                      stream: cubit.getQuestion(level:level ),
-                      builder: (BuildContext context,
-                          AsyncSnapshot<List<QuestionModel>> snapshot) {
-                        if (snapshot.connectionState == ConnectionState.waiting) {
-                          return Center(
-                            child: CircularProgressIndicator(color: Colors.purple,),
-                          );
+                  if(level==2)
+                    levels[1],
+                  if(level==3)
+                    levels[2],
+                  SizedBox(height: 40,),
+                  StreamBuilder<List<QuestionModel>>(
+                    stream: cubit.getQuestion(level:level ),
+                    builder: (BuildContext context,
+                        AsyncSnapshot<List<QuestionModel>> snapshot) {
+                      if (snapshot.connectionState == ConnectionState.waiting) {
+                        return Center(
+                          child: CircularProgressIndicator(color: Colors.purple,),
+                        );
 
-                        } else if (snapshot.hasError) {
-                          return Center(
-                            child: Text('Error: ${snapshot.error}'),
-                          );
+                      } else if (snapshot.hasError) {
+                        return Center(
+                          child: Text('Error: ${snapshot.error}'),
+                        );
 
-                        } else if (!snapshot.hasData) {
-                          return Center(
-                            child: Text('No data'),
-                          );
-                        } else {
-                          List<QuestionModel> questions = snapshot.data!;
-                          return Column(
-                            children: [
-                              actionButton(title: 'بدء',
-                                  buttonColor: Colors.purple,
-                                  onTap: (){
-                                if(questions.isNotEmpty)
-                                  navigateToWithSlide(context,
-                                    QuizScreen(questions: questions, totalTime: level));}),
-                              SizedBox(height: 20,),
-                              actionButton(title: 'رجوع',
-                                  buttonColor: Colors.redAccent,
-                                  onTap: (){
-                                    navigateTo(context,
-                                        ChooseLevel());}),
-                              SizedBox(height: 20,),
-                              Text('  عدد الاسئلة الاجمالي:${questions.length}',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  shadows: [
-                                    Shadow(
-                                      color: Colors
-                                          .purple, // Change to the desired purple color
-                                      offset: Offset(2,
-                                          1), // Adjust the offset based on your preference
-                                      blurRadius:
-                                      2, // Adjust the blur radius based on your preference
-                                    ),
-                                  ],
-                                ),
+                      } else if (!snapshot.hasData) {
+                        return Center(
+                          child: Text('No data'),
+                        );
+                      } else {
+                        List<QuestionModel> questions = snapshot.data!;
+                        return Column(
+                          children: [
+                            actionButton(title: 'Start',
+                                buttonColor: Colors.purple,
+                                onTap: (){
+                              if(questions.isNotEmpty)
+                                navigateToWithSlide(context,
+                                  QuizScreen(questions: questions, totalTime: level));}),
+                            SizedBox(height: 20,),
+                            actionButton(title: 'Back',
+                                buttonColor: Colors.redAccent,
+                                onTap: (){
+                                  navigateTo(context,
+                                      ChooseLevel());}),
+                            SizedBox(height: 20,),
+                            Text(' Total question: ${questions.length}',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                shadows: [
+                                  Shadow(
+                                    color: Colors
+                                        .purple, // Change to the desired purple color
+                                    offset: Offset(2,
+                                        1), // Adjust the offset based on your preference
+                                    blurRadius:
+                                    2, // Adjust the blur radius based on your preference
+                                  ),
+                                ],
+                              ),
 
-                              )
-                            ],
-                          );
-                        }
-                      },
-                    ),
-                  ],
-                ),
+                            )
+                          ],
+                        );
+                      }
+                    },
+                  ),
+                ],
               ),
             ),
           ),

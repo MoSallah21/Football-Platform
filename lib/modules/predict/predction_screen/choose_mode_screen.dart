@@ -6,12 +6,12 @@ import 'package:football_platform/shared/components/components.dart';
 class ChooseModeScreen extends StatelessWidget {
   final List<String> imagePaths = [
     'assets/images/fans.jpg',
-    'assets/images/pep.jpg', // Add more image paths here
+    'assets/images/pep.jpg',
   ];
 
   final List<String> texts = [
-    'مشجع',
-    'محلل', // Add corresponding texts here
+    'Fan',
+    'Analyst',
   ];
 
   @override

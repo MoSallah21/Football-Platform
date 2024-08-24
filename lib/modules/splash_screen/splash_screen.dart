@@ -53,7 +53,7 @@ class _SplashPageState extends State<SplashPage> {
                   child: Column(
                     children: [
                       Text(
-                        "Football Platform",
+                        "Mo Football Platform",
                         style: GoogleFonts.getFont(
                           'Caveat',
                           textStyle: TextStyle(

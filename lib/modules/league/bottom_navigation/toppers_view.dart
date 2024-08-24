@@ -104,7 +104,7 @@ class _TopInLeagueViewState extends State<TopInLeagueView> {
                       Expanded(
                           flex: 1,
                           child: Center(
-                              child: Text("مركز",
+                              child: Text("POS",
                                   style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold,shadows: [
                                     Shadow(
                                       color: Colors
@@ -118,7 +118,7 @@ class _TopInLeagueViewState extends State<TopInLeagueView> {
                       Expanded(
                           flex: 3,
                           child: Center(
-                              child: Text("الاعب",
+                              child: Text("PL",
                                   style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold,shadows: [
                                     Shadow(
                                       color: Colors
@@ -132,7 +132,7 @@ class _TopInLeagueViewState extends State<TopInLeagueView> {
                       Expanded(
                           flex: 1,
                           child: Center(
-                              child: Text("الفريق",
+                              child: Text("Club",
                                   style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold,shadows: [
                                     Shadow(
                                       color: Colors
@@ -146,7 +146,7 @@ class _TopInLeagueViewState extends State<TopInLeagueView> {
                       Expanded(
                           flex: 1,
                           child: Center(
-                              child: Text("الاهداف",
+                              child: Text("G",
                                   style: TextStyle(fontSize: 16,color: Colors.white,fontWeight: FontWeight.bold,shadows: [
                                     Shadow(
                                       color: Colors

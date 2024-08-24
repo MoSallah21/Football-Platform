@@ -9,19 +9,16 @@ class CorrectAnswer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Directionality(
-      textDirection: TextDirection.rtl,
-      child: Scaffold(
-        body: BackGround(
-          img: 0,
-          child: Padding(
-            padding: EdgeInsets.all(16.0),
-            child: ListView.builder(
-              itemCount: questions.length,
-              itemBuilder: (context, index) {
-                return buildQuestionCard(questions[index]);
-              },
-            ),
+    return Scaffold(
+      body: BackGround(
+        img: 0,
+        child: Padding(
+          padding: EdgeInsets.all(16.0),
+          child: ListView.builder(
+            itemCount: questions.length,
+            itemBuilder: (context, index) {
+              return buildQuestionCard(questions[index]);
+            },
           ),
         ),
       ),
@@ -37,7 +34,7 @@ class CorrectAnswer extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'السؤال:',
+              'Question :',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8),
@@ -47,7 +44,7 @@ class CorrectAnswer extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              'الاجابة الصحيحة:',
+              'Correct Answer :',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8),

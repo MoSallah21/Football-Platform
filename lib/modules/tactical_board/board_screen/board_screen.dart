@@ -43,9 +43,9 @@ class _BoardState extends State<Board> {
     cornerKick,
   ];
   static const ftt = MenuItem(text: '4-3-3', );
-  static const cornerKick =MenuItem(text: 'ضربة ركنية',);
-  static const offside =MenuItem(text: 'حالة تسلل', );
-  static const freeKick =MenuItem(text: 'ضربة حرة مباشرة', );
+  static const cornerKick =MenuItem(text: 'Corner Kick',);
+  static const offside =MenuItem(text: 'Off Side', );
+  static const freeKick =MenuItem(text: 'Free Kick', );
   static const fft =MenuItem(text: '4-4-2', );
   static const tft =MenuItem(text: '3-5-2', );
 
@@ -64,13 +64,13 @@ class _BoardState extends State<Board> {
   ];
   List<String>title=
   [
-    'اختر الشكل',
+    'Choose',
     '4-3-3',
     '4-4-2',
     '3-5-2',
-    'حالة تسلل',
-    'ضربة حرة مباشرة',
-    'ضربة ركنية',
+    'Off Side',
+    'Free Kick',
+    'Corner Kick',
   ];
   void onChange(BuildContext context, MenuItem item){
     switch(item) {
@@ -137,18 +137,36 @@ class _BoardState extends State<Board> {
         elevation: 0 ,
         automaticallyImplyLeading: false,
         actions: [
-          Directionality(
-            textDirection: TextDirection.rtl,
-            child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton2(
-                  isExpanded: true,
-                  hint:  Row(
-                    children: [
-                      if(count==0)
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton2(
+                isExpanded: true,
+                hint:  Row(
+                  children: [
+                    if(count==0)
+                    Text(
+                      '${title[0]} ',
+                      style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                          shadows: [
+                            Shadow(
+                              color: Colors
+                                  .purpleAccent.shade100, // Change to the desired purple color
+                              offset: Offset(1,
+                                  1), // Adjust the offset based on your preference
+                              blurRadius:
+                              1, // Adjust the blur radius based on your preference
+                            ),
+                          ]
+                      ),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                    if(count==1)
                       Text(
-                        '${title[0]} ',
+                        '${title[1]} ',
                         style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.bold,
@@ -166,175 +184,154 @@ class _BoardState extends State<Board> {
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
-                      if(count==1)
-                        Text(
-                          '${title[1]} ',
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                  color: Colors
-                                      .purpleAccent.shade100, // Change to the desired purple color
-                                  offset: Offset(1,
-                                      1), // Adjust the offset based on your preference
-                                  blurRadius:
-                                  1, // Adjust the blur radius based on your preference
-                                ),
-                              ]
-                          ),
-                          overflow: TextOverflow.ellipsis,
+                    if(count==2)
+                      Text(
+                        '${title[2]} ',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                color: Colors
+                                    .purpleAccent.shade100, // Change to the desired purple color
+                                offset: Offset(1,
+                                    1), // Adjust the offset based on your preference
+                                blurRadius:
+                                1, // Adjust the blur radius based on your preference
+                              ),
+                            ]
                         ),
-                      if(count==2)
-                        Text(
-                          '${title[2]} ',
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                  color: Colors
-                                      .purpleAccent.shade100, // Change to the desired purple color
-                                  offset: Offset(1,
-                                      1), // Adjust the offset based on your preference
-                                  blurRadius:
-                                  1, // Adjust the blur radius based on your preference
-                                ),
-                              ]
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      if(count==3)
-                        Text(
-                          '${title[3]} ',
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                  color: Colors
-                                      .purpleAccent.shade100, // Change to the desired purple color
-                                  offset: Offset(1,
-                                      1), // Adjust the offset based on your preference
-                                  blurRadius:
-                                  1, // Adjust the blur radius based on your preference
-                                ),
-                              ]
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      if(count==4)
-                        Text(
-                          '${title[4]} ',
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                  color: Colors
-                                      .purpleAccent.shade100, // Change to the desired purple color
-                                  offset: Offset(1,
-                                      1), // Adjust the offset based on your preference
-                                  blurRadius:
-                                  1, // Adjust the blur radius based on your preference
-                                ),
-                              ]
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      if(count==5)
-                        Text(
-                          '${title[5]} ',
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                  color: Colors
-                                      .purpleAccent.shade100, // Change to the desired purple color
-                                  offset: Offset(1,
-                                      1), // Adjust the offset based on your preference
-                                  blurRadius:
-                                  1, // Adjust the blur radius based on your preference
-                                ),
-                              ]
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      if(count==6)
-                        Text(
-                          '${title[6]} ',
-                          style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                  color: Colors
-                                      .purpleAccent.shade100, // Change to the desired purple color
-                                  offset: Offset(1,
-                                      1), // Adjust the offset based on your preference
-                                  blurRadius:
-                                  1, // Adjust the blur radius based on your preference
-                                ),
-                              ]
-                          ),
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                    ],
-                  ),
-                  items: [
-                    ...shapes.map(
-                          (item) => DropdownMenuItem<MenuItem>(
-                        value: item,
-                        child: buildItem(item),
+                        overflow: TextOverflow.ellipsis,
                       ),
-                    ),
-
+                    if(count==3)
+                      Text(
+                        '${title[3]} ',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                color: Colors
+                                    .purpleAccent.shade100, // Change to the desired purple color
+                                offset: Offset(1,
+                                    1), // Adjust the offset based on your preference
+                                blurRadius:
+                                1, // Adjust the blur radius based on your preference
+                              ),
+                            ]
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    if(count==4)
+                      Text(
+                        '${title[4]} ',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                color: Colors
+                                    .purpleAccent.shade100, // Change to the desired purple color
+                                offset: Offset(1,
+                                    1), // Adjust the offset based on your preference
+                                blurRadius:
+                                1, // Adjust the blur radius based on your preference
+                              ),
+                            ]
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    if(count==5)
+                      Text(
+                        '${title[5]} ',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                color: Colors
+                                    .purpleAccent.shade100, // Change to the desired purple color
+                                offset: Offset(1,
+                                    1), // Adjust the offset based on your preference
+                                blurRadius:
+                                1, // Adjust the blur radius based on your preference
+                              ),
+                            ]
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    if(count==6)
+                      Text(
+                        '${title[6]} ',
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            shadows: [
+                              Shadow(
+                                color: Colors
+                                    .purpleAccent.shade100, // Change to the desired purple color
+                                offset: Offset(1,
+                                    1), // Adjust the offset based on your preference
+                                blurRadius:
+                                1, // Adjust the blur radius based on your preference
+                              ),
+                            ]
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      ),
                   ],
-                  onChanged: (value) {
-                    onChange(context, value! as MenuItem);
-                  },
-                  buttonStyleData: ButtonStyleData(
-                    height: 50,
-                    width: 200,
-                    padding: const EdgeInsets.only(left: 14, right: 14),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      border: Border.all(
-                        color: Colors.black26,
-                      ),
-                      color: Color.fromARGB(255, 50, 6, 56),
-                      gradient: const LinearGradient(
-                          colors: [Color(0xFF42275a), Color(0xFF734b6d)]),
-                    ),
-                    elevation: 2,
-                  ),
-                  dropdownStyleData: DropdownStyleData(
-                    maxHeight: 200,
-                    width: 200,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      color: Color.fromARGB(255, 50, 6, 56),
-                      gradient: const LinearGradient(
-                          colors: [Color(0xFF42275a), Color(0xFF734b6d)]),
-                    ),
-                    offset: const Offset(-20, 0),
-                    scrollbarTheme: ScrollbarThemeData(
-                      radius: const Radius.circular(40),
-                      thickness: MaterialStateProperty.all<double>(6),
-                      thumbVisibility: MaterialStateProperty.all<bool>(true),
+                ),
+                items: [
+                  ...shapes.map(
+                        (item) => DropdownMenuItem<MenuItem>(
+                      value: item,
+                      child: buildItem(item),
                     ),
                   ),
-                  menuItemStyleData: const MenuItemStyleData(
-                    height: 40,
-                    padding: EdgeInsets.only(left: 14, right: 14),
+
+                ],
+                onChanged: (value) {
+                  onChange(context, value! as MenuItem);
+                },
+                buttonStyleData: ButtonStyleData(
+                  height: 50,
+                  width: 200,
+                  padding: const EdgeInsets.only(left: 14, right: 14),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    border: Border.all(
+                      color: Colors.black26,
+                    ),
+                    color: Color.fromARGB(255, 50, 6, 56),
+                    gradient: const LinearGradient(
+                        colors: [Color(0xFF42275a), Color(0xFF734b6d)]),
                   ),
+                  elevation: 2,
+                ),
+                dropdownStyleData: DropdownStyleData(
+                  maxHeight: 200,
+                  width: 200,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    color: Color.fromARGB(255, 50, 6, 56),
+                    gradient: const LinearGradient(
+                        colors: [Color(0xFF42275a), Color(0xFF734b6d)]),
+                  ),
+                  offset: const Offset(-20, 0),
+                  scrollbarTheme: ScrollbarThemeData(
+                    radius: const Radius.circular(40),
+                    thickness: MaterialStateProperty.all<double>(6),
+                    thumbVisibility: MaterialStateProperty.all<bool>(true),
+                  ),
+                ),
+                menuItemStyleData: const MenuItemStyleData(
+                  height: 40,
+                  padding: EdgeInsets.only(left: 14, right: 14),
                 ),
               ),
             ),

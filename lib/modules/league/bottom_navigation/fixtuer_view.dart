@@ -104,7 +104,7 @@ class FixturesViewState extends State<FixturesView> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              "Outcoming Matches",
+                              "Outcomes Matches",
                               style: TextStyle(
                                 fontSize: 25,
                                   color: Colors.white,

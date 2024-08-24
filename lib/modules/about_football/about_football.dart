@@ -9,12 +9,10 @@ class AboutFootBallScreen extends StatelessWidget {
     'assets/images/kdb.jpg',
     'assets/images/shotss.jpg', // Add more image paths here
   ];
-
   final List<String> texts = [
-    'العاب',
-    'مقالات', // Add corresponding texts here
+    'Games',
+    'Blogs', // Add corresponding texts here
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,9 +70,7 @@ class AboutFootBallScreen extends StatelessWidget {
             InkWell(
               onTap: () {
                 navigateToWithSlide(context, BlogsScreen());
-
               },
-
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height / 2,
@@ -83,7 +79,6 @@ class AboutFootBallScreen extends StatelessWidget {
                     image: AssetImage(imagePaths[1]),
                     fit: BoxFit.cover,
                     colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.3), BlendMode.darken),
-
                   ),
                 ),
                 child: Align(
