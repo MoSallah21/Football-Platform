@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:football_platform/features/blogs/presentation/pages/blogs_page.dart';
 import 'package:football_platform/modules/about_football/blogs/blogs.dart';
 import 'package:football_platform/modules/about_football/quiz/choose_level/choose_level.dart';
 import 'package:football_platform/shared/components/components.dart';

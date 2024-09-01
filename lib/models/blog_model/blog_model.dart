@@ -15,10 +15,6 @@ class BlogModel{
     description = json['description'];
     dateOfPublish = json['date'];
     nameOfAuthor = json['author'];
-
-
-
-
   }
 
   BlogModel({

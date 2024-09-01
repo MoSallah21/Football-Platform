@@ -46,13 +46,16 @@ dependencies:
   conditional_builder_null_safety: ^0.0.6
   hexcolor: ^3.0.1
   iconly: ^1.0.1
-  carousel_slider: ^4.2.1
   liquid_progress_indicator_v2: ^0.5.0
   lottie: ^2.5.0
   line_icons: ^2.0.3
   flutter_snake_navigationbar: ^0.6.1
   dropdown_button2: ^2.3.9
-
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+  get_it: ^7.7.0
+  internet_connection_checker: ^1.0.0+1
+  carousel_slider: ^5.0.0
 
 
   # firbase
