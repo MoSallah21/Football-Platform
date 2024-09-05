@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football_platform/models/blog_model/blog_model.dart';
 import 'package:football_platform/models/question_model/model.dart';
 import 'about_state.dart';
 
@@ -19,16 +18,6 @@ int index=0;
         .map((snapshot) {
       return snapshot.docs
           .map((doc) => QuestionModel.fromJson(doc.data()))
-          .toList();
-    });
-  }
-  Stream<List<BlogModel>> getBlogs() {
-    return FirebaseFirestore.instance
-        .collection('blogs')
-        .snapshots()
-        .map((snapshot) {
-      return snapshot.docs
-          .map((doc) => BlogModel.fromJson(doc.data()))
           .toList();
     });
   }

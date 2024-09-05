@@ -19,14 +19,12 @@ class BlogBloc extends Bloc<BlogEvent,BlogState> {
       final failureOrPosts = await getAllBlogs.call();
 
       failureOrPosts.fold(
-            (failure) {
-          print("Error: ${_mapFailureToMessage(failure)}");
-          emit(GetAllBlogsErrorState(message: _mapFailureToMessage(failure)));
-        },
-            (blogs) {
-          print("Blogs fetched successfully: $blogs");
-          emit(GetAllBlogsSuccessState(blogs: blogs));
-        },
+            (failure) =>
+          emit(GetAllBlogsErrorState(message: _mapFailureToMessage(failure)))
+        ,
+            (blogs)=>
+          emit(GetAllBlogsSuccessState(blogs: blogs))
+        ,
       );
     });  }
 

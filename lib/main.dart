@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_platform/features/blogs/presentation/bloc/blog_bloc.dart';
+import 'package:football_platform/features/game/presentation/bloc/quiz_bloc.dart';
 import 'package:football_platform/modules/about_football/state_management/about_cubit.dart';
 import 'package:football_platform/modules/league/state_management/leagues_cubit.dart';
 import 'package:football_platform/modules/splash_screen/splash_screen.dart';
@@ -34,6 +35,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (BuildContext context) => LeagueCubit()),
         BlocProvider(create: (BuildContext context) => AboutCubit()),
+        BlocProvider(create: (_)=>di.sl<QuizBloc>()),
         BlocProvider(create: (_)=>di.sl<BlogBloc>()..add(GetAllBlogsEvent())),
         BlocProvider(create: (BuildContext context) => PredictCubit()),
       ],

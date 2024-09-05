@@ -3,10 +3,10 @@ import 'package:football_platform/features/game/domain/entities/question.dart';
 import 'package:football_platform/models/question_model/model.dart';
 import 'package:football_platform/shared/components/background.dart';
 
-class CorrectAnswer extends StatelessWidget {
-  final List<QuestionModel> questions;
+class CorrectAnswerPage extends StatelessWidget {
+  final List<Question> questions;
 
-  CorrectAnswer({required this.questions});
+  CorrectAnswerPage({required this.questions});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class CorrectAnswer extends StatelessWidget {
     );
   }
 
-  Widget buildQuestionCard(QuestionModel question) {
+  Widget buildQuestionCard(Question question) {
     return Card(
       margin: EdgeInsets.only(bottom: 16),
       child: Padding(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_platform/features/game/domain/entities/question.dart';
+import 'package:football_platform/features/game/presentation/pages/correct_answers_page.dart';
 import 'package:football_platform/models/question_model/model.dart';
 import 'package:football_platform/modules/about_football/quiz/choose_level/choose_level.dart';
 import 'package:football_platform/modules/about_football/quiz/correct_answers_screen/correct_answers.dart';
@@ -12,13 +13,13 @@ import 'package:football_platform/shared/components/background.dart';
 
 
 
-class ResultScreen extends StatelessWidget {
-  const ResultScreen({
+class ResultPage extends StatelessWidget {
+  const ResultPage({
     super.key,
     required this.score, required this.questions,
     });
   final int score;
-  final List<QuestionModel> questions;
+  final List<Question> questions;
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +63,7 @@ class ResultScreen extends StatelessWidget {
                       actionButton(title: 'Correct Answers',
                           buttonColor: Colors.purple,
                           onTap: (){
-                            navigateTo(context, CorrectAnswer(questions: questions));
+                            navigateTo(context, CorrectAnswerPage(questions: questions));
                           }),
                       SizedBox(height: 15,),
                       actionButton(title: 'Home',

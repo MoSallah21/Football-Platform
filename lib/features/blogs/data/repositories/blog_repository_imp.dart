@@ -3,7 +3,7 @@ import 'package:football_platform/core/errors/exception.dart';
 import 'package:football_platform/core/errors/failures.dart';
 import 'package:football_platform/core/network/network_info.dart';
 import 'package:football_platform/features/blogs/data/datasources/local/blog_local_datasource.dart';
-import 'package:football_platform/features/blogs/data/datasources/remote/blog_remote_datesoucre.dart';
+import 'package:football_platform/features/blogs/data/datasources/remote/blog_remote_datasource.dart';
 import 'package:football_platform/features/blogs/domain/entities/blog.dart';
 import 'package:football_platform/features/blogs/domain/repositories/blog_repository.dart';
 

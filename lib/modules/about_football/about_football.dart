@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:football_platform/features/blogs/presentation/pages/blogs_page.dart';
-import 'package:football_platform/modules/about_football/blogs/blogs.dart';
+import 'package:football_platform/features/game/presentation/pages/choose_level_page.dart';
 import 'package:football_platform/modules/about_football/quiz/choose_level/choose_level.dart';
 import 'package:football_platform/shared/components/components.dart';
 
@@ -23,7 +23,7 @@ class AboutFootBallScreen extends StatelessWidget {
           children:[
             InkWell(
               onTap: () {
-                navigateToWithSlide(context, ChooseLevel());
+                navigateToWithSlide(context, ChooseLevelPage());
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
