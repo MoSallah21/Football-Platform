@@ -4,8 +4,8 @@ import 'package:football_platform/features/blogs/presentation/widgets/blog_list.
 import 'package:football_platform/features/blogs/presentation/widgets/blog_title.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-class BlogsScreen extends StatelessWidget {
-  const BlogsScreen({Key? key}) : super(key: key);
+class BlogsPage extends StatelessWidget {
+  const BlogsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

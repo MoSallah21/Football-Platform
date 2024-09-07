@@ -1,9 +1,9 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football_platform/features/game/domain/entities/question.dart';
-import 'package:football_platform/features/game/presentation/bloc/quiz_bloc.dart';
-import 'package:football_platform/features/game/presentation/pages/result_page.dart';
+import 'package:football_platform/features/quiz/domain/entities/question.dart';
+import 'package:football_platform/features/quiz/presentation/bloc/quiz_bloc.dart';
+import 'package:football_platform/features/quiz/presentation/pages/result_page.dart';
 import 'package:football_platform/shared/components/components.dart';
 import 'package:football_platform/shared/components/background.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -25,14 +25,13 @@ class _QuestionsPageState extends State<QuestionsPage> {
   void initState() {
     super.initState();
 
-    context.read<QuizBloc>().add(GetAllQuestionsEvent(level: 1));
-
-    time = _determineTotalTime(widget.totalTime);
-    context.read<QuizBloc>().add(TimerTickEvent());
-
+    time = context.read<QuizBloc>().currentTime;
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
-      context.read<QuizBloc>().add(TimerTickEvent());
-      if (context.read<QuizBloc>().currentTime == 0) {
+      final bloc = context.read<QuizBloc>();
+
+      if (bloc.currentTime > 0) {
+        bloc.add(TimerTickEvent());
+      } else {
         timer.cancel();
         _navigateToResultScreen();
       }
@@ -43,19 +42,6 @@ class _QuestionsPageState extends State<QuestionsPage> {
   void dispose() {
     timer.cancel();
     super.dispose();
-  }
-
-  int _determineTotalTime(int level) {
-    switch (level) {
-      case 1:
-        return 40;
-      case 2:
-        return 30;
-      case 3:
-        return 20;
-      default:
-        return 20; // Default time if level is not recognized
-    }
   }
 
   void _navigateToResultScreen() {
@@ -70,8 +56,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
   Widget build(BuildContext context) {
     return BlocBuilder<QuizBloc, QuizState>(
       builder: (BuildContext context, QuizState state) {
-        if (state is GetAllQuestionsSuccessState) {
-          final currentQuestion = widget.questions[context.read<QuizBloc>().currentIndex];
+        final bloc = context.read<QuizBloc>();
+
+        // تحقق مما إذا كانت الأسئلة محملة بنجاح أو في حالة تحديث المؤقت
+        if (state is GetAllQuestionsSuccessState || state is TimerTickState) {
+          final currentQuestion = widget.questions[bloc.currentIndex];
 
           return Scaffold(
             body: BackGround(
@@ -82,18 +71,18 @@ class _QuestionsPageState extends State<QuestionsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: 40),
-                    _buildTimer(context),
+                    _buildTimer(context), // عرض المؤقت
                     SizedBox(height: 40),
-                    _buildQuestionText(currentQuestion.question),
+                    _buildQuestionText(currentQuestion.question), // عرض السؤال
                     SizedBox(height: 10),
-                    _buildAnswersList(currentQuestion),
+                    _buildAnswersList(currentQuestion), // عرض الإجابات
                   ],
                 ),
               ),
             ),
           );
         } else {
-          return Center(child: CircularProgressIndicator());
+          return Center(child: CircularProgressIndicator()); // عرض تحميل في الحالات الأخرى
         }
       },
     );

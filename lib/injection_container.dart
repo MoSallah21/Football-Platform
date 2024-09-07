@@ -5,11 +5,11 @@ import 'package:football_platform/features/blogs/data/repositories/blog_reposito
 import 'package:football_platform/features/blogs/domain/repositories/blog_repository.dart';
 import 'package:football_platform/features/blogs/domain/usecases/get_all_blogs.dart';
 import 'package:football_platform/features/blogs/presentation/bloc/blog_bloc.dart';
-import 'package:football_platform/features/game/data/datasources/remote/quiz_remote_datasource.dart';
-import 'package:football_platform/features/game/data/repositories/quiz_repository_imp.dart';
-import 'package:football_platform/features/game/domain/repositories/quiz_repository.dart';
-import 'package:football_platform/features/game/domain/usecases/get_all_questions.dart';
-import 'package:football_platform/features/game/presentation/bloc/quiz_bloc.dart';
+import 'package:football_platform/features/quiz/data/datasources/remote/quiz_remote_datasource.dart';
+import 'package:football_platform/features/quiz/data/repositories/quiz_repository_imp.dart';
+import 'package:football_platform/features/quiz/domain/repositories/quiz_repository.dart';
+import 'package:football_platform/features/quiz/domain/usecases/get_all_questions.dart';
+import 'package:football_platform/features/quiz/presentation/bloc/quiz_bloc.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 final sl=GetIt.instance;

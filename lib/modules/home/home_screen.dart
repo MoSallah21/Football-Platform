@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football_platform/modules/about_football/about_football.dart';
+import 'package:football_platform/features/quiz/presentation/pages/about_football_page.dart';
 import 'package:football_platform/modules/league/league_home/league_home.dart';
 import 'package:football_platform/modules/league/state_management/leagues_cubit.dart';
 import 'package:football_platform/modules/league/state_management/leagues_status.dart';
@@ -32,7 +32,7 @@ class HomeScreen extends StatelessWidget {
         List<Widget> pages=[
           HomeLeague(),
           MatchPredict(),
-          AboutFootBallScreen(),
+          AboutFootBallPage(),
           Board()
         ];
         return Scaffold(

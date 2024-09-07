@@ -1,11 +1,9 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:football_platform/features/blogs/presentation/pages/blogs_page.dart';
-import 'package:football_platform/features/game/presentation/pages/choose_level_page.dart';
-import 'package:football_platform/modules/about_football/quiz/choose_level/choose_level.dart';
+import 'package:football_platform/features/quiz/presentation/pages/choose_level_page.dart';
 import 'package:football_platform/shared/components/components.dart';
 
-class AboutFootBallScreen extends StatelessWidget {
+class AboutFootBallPage extends StatelessWidget {
   final List<String> imagePaths = [
     'assets/images/kdb.jpg',
     'assets/images/shotss.jpg', // Add more image paths here
@@ -70,7 +68,7 @@ class AboutFootBallScreen extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                navigateToWithSlide(context, BlogsScreen());
+                navigateToWithSlide(context, BlogsPage());
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,

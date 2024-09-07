@@ -3,9 +3,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_platform/core/errors/failures.dart';
 import 'package:football_platform/core/strings/failures.dart';
-import 'package:football_platform/features/game/domain/entities/question.dart';
-import 'package:football_platform/features/game/domain/usecases/get_all_questions.dart';
-
+import 'package:football_platform/features/quiz/domain/entities/question.dart';
+import 'package:football_platform/features/quiz/domain/usecases/get_all_questions.dart';
 part 'quiz_event.dart';
 part 'quiz_state.dart';
 
@@ -37,13 +36,25 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
     failureOrQuestions.fold(
           (failure) => emit(GetAllQuestionsErrorState(
           message: _mapFailureToMessage(failure))),
-          (questions) {
-        questions = questions;
+          (questionsList) {
+        questions = questionsList;
+        currentTime = _determineTotalTime(level);
         emit(GetAllQuestionsSuccessState(questions: questions));
       },
     );
   }
-
+  int _determineTotalTime(int level) {
+    switch (level) {
+      case 1:
+        return 40;
+      case 2:
+        return 30;
+      case 3:
+        return 20;
+      default:
+        return 20; // وقت افتراضي
+    }
+  }
   void _onSelectAnswerEvent(
       SelectAnswerEvent event, Emitter<QuizState> emit) {
     selectedAnswer = event.answer;
@@ -56,7 +67,6 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
       selectedAnswer = '';
       emit(NextQuestionState(currentIndex: currentIndex));
     } else {
-      // handle the end of the quiz
     }
   }
 
@@ -66,7 +76,6 @@ class QuizBloc extends Bloc<QuizEvent, QuizState> {
       emit(TimerTickState(currentTime: currentTime));
     } else {
       timer?.cancel();
-      // handle time out (e.g., move to next question)
     }
   }
 

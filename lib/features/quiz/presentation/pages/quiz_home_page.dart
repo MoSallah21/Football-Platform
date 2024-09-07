@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football_platform/features/game/domain/entities/question.dart';
-import 'package:football_platform/features/game/presentation/bloc/quiz_bloc.dart';
-import 'package:football_platform/features/game/presentation/pages/choose_level_page.dart';
-import 'package:football_platform/features/game/presentation/pages/questions_page.dart';
+import 'package:football_platform/features/quiz/domain/entities/question.dart';
+import 'package:football_platform/features/quiz/presentation/bloc/quiz_bloc.dart';
+import 'package:football_platform/features/quiz/presentation/pages/choose_level_page.dart';
+import 'package:football_platform/features/quiz/presentation/pages/questions_page.dart';
 import 'package:football_platform/shared/components/components.dart';
 import 'package:football_platform/shared/components/background.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -16,16 +16,9 @@ class QuizHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<QuizBloc, QuizState>(
-      listener: (context, state) {
-        // No actions needed in listener in this case
-      },
+    BlocProvider.of<QuizBloc>(context).add(GetAllQuestionsEvent(level: level));
+    return BlocBuilder<QuizBloc, QuizState>(
       builder: (context, state) {
-        // Only dispatch event if not in loading state and questions are not available
-        if (state is GetAllQuestionsErrorState) {
-          BlocProvider.of<QuizBloc>(context).add(GetAllQuestionsEvent(level: level));
-        }
-
         List<Text> levels = [
           Text(
             'Easy',
@@ -120,3 +113,4 @@ class QuizHomePage extends StatelessWidget {
     );
   }
 }
+

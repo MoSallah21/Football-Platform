@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:football_platform/modules/about_football/quiz/quiz_home_screen/quiz_home.dart';
 import 'package:football_platform/modules/home/home_screen.dart';
 import 'package:football_platform/shared/components/components.dart';
 import 'package:football_platform/shared/components/background.dart';

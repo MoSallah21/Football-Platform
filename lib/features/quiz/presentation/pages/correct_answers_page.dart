@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:football_platform/features/game/domain/entities/question.dart';
-import 'package:football_platform/models/question_model/model.dart';
+import 'package:football_platform/features/quiz/domain/entities/question.dart';
 import 'package:football_platform/shared/components/background.dart';
 
 class CorrectAnswerPage extends StatelessWidget {

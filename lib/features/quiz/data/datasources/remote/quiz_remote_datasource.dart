@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:football_platform/core/errors/exception.dart';
-import 'package:football_platform/features/game/data/models/question_model.dart';
+import 'package:football_platform/features/quiz/data/models/question_model.dart';
 
 abstract class QuizRemoteDatasource{
   Future<List<QuestionModel>> getAllQuestions(int level);

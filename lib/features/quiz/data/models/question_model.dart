@@ -1,4 +1,5 @@
-import 'package:football_platform/features/game/domain/entities/question.dart';
+
+import 'package:football_platform/features/quiz/domain/entities/question.dart';
 
 class QuestionModel extends Question{
   QuestionModel({
