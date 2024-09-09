@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:football_platform/modules/predict/predction_screen/pick_team_screen.dart';
+import 'package:football_platform/features/prediction/presentation/pages/pick_team_page.dart';
 import 'package:football_platform/shared/components/components.dart';
 
 class ChooseModeScreen extends StatelessWidget {
@@ -23,7 +23,7 @@ class ChooseModeScreen extends StatelessWidget {
           children:[
             InkWell(
               onTap: () {
-                navigateToWithSlide(context,PickTeam(mode: 1));
+                navigateToWithSlide(context,PickTeamPage(mode: 1));
               },
               child: Container(
                 width: MediaQuery.of(context).size.width,
@@ -70,7 +70,7 @@ class ChooseModeScreen extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                navigateToWithSlide(context, PickTeam(mode: 2,));
+                navigateToWithSlide(context, PickTeamPage(mode: 2,));
 
               },
 

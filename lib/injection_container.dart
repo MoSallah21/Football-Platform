@@ -5,6 +5,11 @@ import 'package:football_platform/features/blogs/data/repositories/blog_reposito
 import 'package:football_platform/features/blogs/domain/repositories/blog_repository.dart';
 import 'package:football_platform/features/blogs/domain/usecases/get_all_blogs.dart';
 import 'package:football_platform/features/blogs/presentation/bloc/blog_bloc.dart';
+import 'package:football_platform/features/prediction/data/datasources/remote/predict_remote_datasource.dart';
+import 'package:football_platform/features/prediction/data/repositories/predict_repository_imp.dart';
+import 'package:football_platform/features/prediction/domain/repositories/predict_repository.dart';
+import 'package:football_platform/features/prediction/domain/usecases/predict_result.dart';
+import 'package:football_platform/features/prediction/presentation/bloc/predict_bloc.dart';
 import 'package:football_platform/features/quiz/data/datasources/remote/quiz_remote_datasource.dart';
 import 'package:football_platform/features/quiz/data/repositories/quiz_repository_imp.dart';
 import 'package:football_platform/features/quiz/domain/repositories/quiz_repository.dart';
@@ -32,6 +37,9 @@ Future<void> init() async {
   //  quiz
   sl.registerLazySingleton<QuizRemoteDatasource>(() => QuizRemoteDatasourceImp());
 
+  //  predict
+  sl.registerLazySingleton<PredictRemoteDatasource>(() => PredictRemoteDatasourceImp());
+
 
 
   // Repository
@@ -48,12 +56,19 @@ Future<void> init() async {
     networkInfo: sl(),
   ));
 
+  // PredictRepository
+  sl.registerLazySingleton<PredictRepository>(() => PredictRepositoryImp(
+      remoteDatasource: sl(),
+      networkInfo: sl()));
+
 
   // UseCases
   // Blogs
   sl.registerLazySingleton(() => GetAllBlogsUseCase(sl()));
   // Quiz
   sl.registerLazySingleton(() => GetAllQuestionsUseCase(sl()));
+  // Quiz
+  sl.registerLazySingleton(() => PredictUseCase(sl()));
 
 
   // Bloc
@@ -61,5 +76,8 @@ Future<void> init() async {
   sl.registerFactory(() => BlogBloc(getAllBlogs: sl()));
   //Quiz
   sl.registerFactory(() => QuizBloc(getAllQuestions: sl()));
+  //Predict
+  sl.registerFactory(() => PredictBloc(predict: sl()));
+
 
 }

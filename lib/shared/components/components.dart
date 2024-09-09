@@ -175,7 +175,7 @@ shape: BoxShape.circle,
 color: Colors.purple.shade500,
 ),
 child: Icon(
-Icons.arrow_back_ios_outlined,
+Icons.arrow_forward_ios_outlined,
 color: Colors.white,
 ),
 ),

@@ -8,11 +8,12 @@ import 'package:http/http.dart' as http;
 class Api {
   static final headers = {
     'x-rapidapi-host': "v3.football.api-sports.io",
+    'x-rapidapi-key': "3218a5fa8ec99620876495e5ab28c02d",
   };
 
   static Future<List<TableData>> getLeagueTable(String league) async {
     String url =
-        "https://v3.football.api-sports.io/standings?league=$league&season=2023";
+        "https://v3.football.api-sports.io/standings?league=$league&season=2024";
     List<TableData> table;
     http.Response res = await http.get(Uri.parse(url), headers: headers);
     if (res.statusCode == 200) {
@@ -27,7 +28,7 @@ class Api {
 
   static Future<List<PlayerStats>> topScorers(String league) async {
     String url =
-        "https://v3.football.api-sports.io/players/topscorers?league=$league&season=2023";
+        "https://v3.football.api-sports.io/players/topscorers?league=$league&season=2024";
     List<PlayerStats> table;
     http.Response res = await http.get(Uri.parse(url), headers: headers);
     if (res.statusCode == 200) {
@@ -43,7 +44,7 @@ class Api {
 
   static Future<List<PlayerStats>> topAssists(String league) async {
     String url =
-        "https://v3.football.api-sports.io/players/topassists?league=$league&season=2023";
+        "https://v3.football.api-sports.io/players/topassists?league=$league&season=2024";
 
     List<PlayerStats> table;
     http.Response res = await http.get(Uri.parse(url), headers: headers);
@@ -63,7 +64,7 @@ class Api {
 
   static Future<List<PlayerStats>> yellowCard(String league) async {
     String url =
-        "https://v3.football.api-sports.io/players/topyellowcards?league=$league&season=2023";
+        "https://v3.football.api-sports.io/players/topyellowcards?league=$league&season=2024";
 
     List<PlayerStats> table;
     http.Response res = await http.get(Uri.parse(url), headers: headers);
@@ -82,7 +83,7 @@ class Api {
 
   static Future<List<PlayerStats>> redCard(String league) async {
     String url =
-        "https://v3.football.api-sports.io/players/topredcards?league=$league&season=2023";
+        "https://v3.football.api-sports.io/players/topredcards?league=$league&season=2024";
 
     List<PlayerStats> table;
     http.Response res = await http.get(Uri.parse(url), headers: headers);
@@ -102,7 +103,7 @@ class Api {
 
   static Future<List<FixtureData>> getAllMathces(String league) async {
     String url =
-        "https://v3.football.api-sports.io/fixtures/?league=$league&season=2023";
+        "https://v3.football.api-sports.io/fixtures/?league=$league&season=2024";
 
     List<FixtureData> table = [];
     http.Response res = await http.get(Uri.parse(url), headers: headers);
@@ -135,7 +136,7 @@ class Api {
 
   static Future<List<FixtureData>> getLiveMatches(String league) async {
     String url =
-        "https://v3.football.api-sports.io/fixtures/?league=$league&season=2023&live=all";
+        "https://v3.football.api-sports.io/fixtures/?league=$league&season=2024&live=all";
 
     List<FixtureData> table;
     http.Response res = await http.get(Uri.parse(url), headers: headers);
@@ -153,7 +154,7 @@ class Api {
 
   static Future<List<FixtureData>> getUpComingMatches(String league) async {
     String url =
-        "https://v3.football.api-sports.io/fixtures/?league=$league&season=2023&timezone=Asia/Amman&next=15";
+        "https://v3.football.api-sports.io/fixtures/?league=$league&season=2024";
 
     List<FixtureData> table;
     http.Response res = await http.get(Uri.parse(url), headers: headers);

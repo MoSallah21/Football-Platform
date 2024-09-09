@@ -57,11 +57,8 @@ class _QuestionsPageState extends State<QuestionsPage> {
     return BlocBuilder<QuizBloc, QuizState>(
       builder: (BuildContext context, QuizState state) {
         final bloc = context.read<QuizBloc>();
-
-        // تحقق مما إذا كانت الأسئلة محملة بنجاح أو في حالة تحديث المؤقت
         if (state is GetAllQuestionsSuccessState || state is TimerTickState) {
           final currentQuestion = widget.questions[bloc.currentIndex];
-
           return Scaffold(
             body: BackGround(
               img: 1,
@@ -71,11 +68,11 @@ class _QuestionsPageState extends State<QuestionsPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: 40),
-                    _buildTimer(context), // عرض المؤقت
+                    _buildTimer(context),
                     SizedBox(height: 40),
-                    _buildQuestionText(currentQuestion.question), // عرض السؤال
+                    _buildQuestionText(currentQuestion.question),
                     SizedBox(height: 10),
-                    _buildAnswersList(currentQuestion), // عرض الإجابات
+                    _buildAnswersList(currentQuestion),
                   ],
                 ),
               ),
