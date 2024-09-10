@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:football_platform/modules/home/home_screen.dart';
-import 'package:football_platform/shared/components/components.dart';
+import 'package:football_platform/core/componants/components.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 

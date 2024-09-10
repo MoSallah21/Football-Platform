@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football_platform/models/league_models/fixture_data.dart';
-import 'package:football_platform/models/league_models/liveFixtures/live_fixture_data.dart';
+import 'package:football_platform/features/news/data/models/league_models/fixture_data.dart';
+import 'package:football_platform/features/news/data/models/league_models/liveFixtures/live_fixture_data.dart';
 import 'package:football_platform/modules/league/state_management/leagues_cubit.dart';
 import 'package:hexcolor/hexcolor.dart';
 

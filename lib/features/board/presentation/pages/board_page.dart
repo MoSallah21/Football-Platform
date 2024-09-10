@@ -1,17 +1,17 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:football_platform/models/items/items.dart';
-import 'package:football_platform/modules/tactical_board/board_screen/draggable_icon.dart';
-import 'package:football_platform/modules/tactical_board/board_screen/painter.dart';
+import 'package:football_platform/core/utl/items.dart';
+import 'package:football_platform/features/board/presentation/widgets/draggable_icon.dart';
+import 'package:football_platform/features/board/presentation/widgets/painter.dart';
 
-class Board extends StatefulWidget {
-  const Board({super.key});
+class BoardPage extends StatefulWidget {
+  const BoardPage({super.key});
 
   @override
-  State<Board> createState() => _BoardState();
+  State<BoardPage> createState() => _BoardPageState();
 }
 
-class _BoardState extends State<Board> {
+class _BoardPageState extends State<BoardPage> {
   late bool canPaint;
 
    int count=0;
@@ -29,7 +29,7 @@ class _BoardState extends State<Board> {
     Navigator.pushReplacement(
       context,
       PageRouteBuilder(
-        pageBuilder: (_, __, ___) => const Board(),
+        pageBuilder: (_, __, ___) => const BoardPage(),
       ),
     );
   }

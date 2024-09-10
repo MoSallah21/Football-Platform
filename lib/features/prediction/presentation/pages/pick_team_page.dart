@@ -6,8 +6,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_platform/features/prediction/presentation/bloc/predict_bloc.dart';
 import 'package:football_platform/features/prediction/presentation/pages/possession_page.dart';
 import 'package:football_platform/features/prediction/presentation/pages/result_page.dart';
-import 'package:football_platform/features/prediction/presentation/widgets/items.dart';
-import 'package:football_platform/shared/components/components.dart';
+import 'package:football_platform/core/utl/items.dart';
+import 'package:football_platform/core/componants/components.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class PickTeamPage extends StatefulWidget {

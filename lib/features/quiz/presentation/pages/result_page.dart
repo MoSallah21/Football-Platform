@@ -3,8 +3,8 @@ import 'package:football_platform/features/quiz/domain/entities/question.dart';
 import 'package:football_platform/features/quiz/presentation/pages/choose_level_page.dart';
 import 'package:football_platform/features/quiz/presentation/pages/correct_answers_page.dart';
 import 'package:football_platform/modules/home/home_screen.dart';
-import 'package:football_platform/shared/components/components.dart';
-import 'package:football_platform/shared/components/background.dart';
+import 'package:football_platform/core/componants/components.dart';
+import 'package:football_platform/core/componants/background.dart';
 
 
 

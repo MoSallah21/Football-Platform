@@ -1,6 +1,6 @@
-import 'package:football_platform/models/league_models/leagues.dart';
 import 'fixture.dart';
 import 'goals.dart';
+import 'leagues.dart';
 import 'teams.dart';
 class FixtureData {
   final Fixture fixture;

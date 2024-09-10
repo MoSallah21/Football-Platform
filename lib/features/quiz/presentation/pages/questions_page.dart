@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_platform/features/quiz/domain/entities/question.dart';
 import 'package:football_platform/features/quiz/presentation/bloc/quiz_bloc.dart';
 import 'package:football_platform/features/quiz/presentation/pages/result_page.dart';
-import 'package:football_platform/shared/components/components.dart';
-import 'package:football_platform/shared/components/background.dart';
+import 'package:football_platform/core/componants/components.dart';
+import 'package:football_platform/core/componants/background.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class QuestionsPage extends StatefulWidget {

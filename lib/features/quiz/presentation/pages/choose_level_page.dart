@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_platform/modules/home/home_screen.dart';
-import 'package:football_platform/shared/components/components.dart';
-import 'package:football_platform/shared/components/background.dart';
+import 'package:football_platform/core/componants/components.dart';
+import 'package:football_platform/core/componants/background.dart';
 
 import 'quiz_home_page.dart';
 

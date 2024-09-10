@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:football_platform/features/prediction/presentation/pages/shoots_page.dart';
-import 'package:football_platform/shared/components/components.dart';
+import 'package:football_platform/core/componants/components.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class PossessionPage extends StatefulWidget {

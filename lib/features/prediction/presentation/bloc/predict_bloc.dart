@@ -5,7 +5,7 @@ import 'package:football_platform/core/errors/failures.dart';
 import 'package:football_platform/core/strings/failures.dart';
 import 'package:football_platform/features/prediction/data/models/team_prediction_model.dart';
 import 'package:football_platform/features/prediction/domain/usecases/predict_result.dart';
-import 'package:football_platform/features/prediction/presentation/widgets/items.dart';
+import 'package:football_platform/core/utl/items.dart';
 part 'predict_event.dart';
 part 'predict_state.dart';
 class PredictBloc extends Bloc<PredictEvent, PredictState> {

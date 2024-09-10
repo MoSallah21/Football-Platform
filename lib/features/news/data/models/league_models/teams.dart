@@ -1,4 +1,4 @@
-import 'package:football_platform/models/league_models/team.dart';
+import 'team.dart';
 
 class Teams {
   final Team home;

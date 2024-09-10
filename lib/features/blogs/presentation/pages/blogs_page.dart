@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:football_platform/shared/components/background.dart';
+import 'package:football_platform/core/componants/background.dart';
 import 'package:football_platform/features/blogs/presentation/widgets/blog_list.dart';
 import 'package:football_platform/features/blogs/presentation/widgets/blog_title.dart';
 import 'package:hexcolor/hexcolor.dart';

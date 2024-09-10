@@ -5,9 +5,9 @@ import 'package:football_platform/features/quiz/presentation/pages/about_footbal
 import 'package:football_platform/modules/league/league_home/league_home.dart';
 import 'package:football_platform/modules/league/state_management/leagues_cubit.dart';
 import 'package:football_platform/modules/league/state_management/leagues_status.dart';
-import 'package:football_platform/modules/tactical_board/board_screen/board_screen.dart';
-import 'package:football_platform/shared/components/components.dart';
-import 'package:football_platform/shared/components/background.dart';
+import 'package:football_platform/features/board/presentation/pages/board_page.dart';
+import 'package:football_platform/core/componants/components.dart';
+import 'package:football_platform/core/componants/background.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -34,7 +34,7 @@ class HomeScreen extends StatelessWidget {
           HomeLeague(),
           PickTeamPage(mode: 1),
           AboutFootBallPage(),
-          Board(),
+          BoardPage(),
         ];
         return Scaffold(
           body: SizedBox.expand(

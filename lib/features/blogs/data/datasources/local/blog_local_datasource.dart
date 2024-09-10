@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:football_platform/core/errors/exception.dart';
 import 'package:football_platform/features/blogs/data/models/blog_model.dart';
-import 'package:football_platform/shared/network/local/remot/cachehelper.dart';
+import 'package:football_platform/core/cache/cache_helper.dart';
 
 abstract class BlogLocalDatasource{
   Future<List<BlogModel>> getCachedBlogs();

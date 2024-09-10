@@ -1,14 +1,15 @@
 import 'dart:convert';
-import 'package:football_platform/models/league_models/fixture_data.dart';
-import 'package:football_platform/models/league_models/liveFixtures/live_fixture_data.dart';
-import 'package:football_platform/models/league_models/player_stats.dart';
-import 'package:football_platform/models/league_models/table.dart';
+
+import 'package:football_platform/features/news/data/models/league_models/fixture_data.dart';
+import 'package:football_platform/features/news/data/models/league_models/liveFixtures/live_fixture_data.dart';
+import 'package:football_platform/features/news/data/models/league_models/player_stats.dart';
+import 'package:football_platform/features/news/data/models/league_models/table.dart';
 import 'package:http/http.dart' as http;
 
 class Api {
   static final headers = {
     'x-rapidapi-host': "v3.football.api-sports.io",
-    'x-rapidapi-key': "3218a5fa8ec99620876495e5ab28c02d",
+    'x-rapidapi-key': "",
   };
 
   static Future<List<TableData>> getLeagueTable(String league) async {
@@ -101,7 +102,7 @@ class Api {
     return table;
   }
 
-  static Future<List<FixtureData>> getAllMathces(String league) async {
+  static Future<List<FixtureData>> getAllMatches(String league) async {
     String url =
         "https://v3.football.api-sports.io/fixtures/?league=$league&season=2024";
 

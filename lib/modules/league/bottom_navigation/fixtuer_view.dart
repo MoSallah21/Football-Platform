@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football_platform/models/league_models/fixture_data.dart';
+import 'package:football_platform/features/news/data/models/league_models/fixture_data.dart';
 import 'package:football_platform/modules/league/all_matchs/all_matches.dart';
 import 'package:football_platform/modules/league/live_match/live_match_view.dart';
 import 'package:football_platform/modules/league/state_management/leagues_cubit.dart';
 import 'package:football_platform/modules/league/state_management/leagues_status.dart';
-import 'package:football_platform/shared/components/components.dart';
+import 'package:football_platform/core/componants/components.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class FixturesView extends StatefulWidget {

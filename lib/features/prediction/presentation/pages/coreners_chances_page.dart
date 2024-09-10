@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:football_platform/features/prediction/presentation/bloc/predict_bloc.dart';
-import 'package:football_platform/shared/components/components.dart';
+import 'package:football_platform/core/componants/components.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'result_page.dart';

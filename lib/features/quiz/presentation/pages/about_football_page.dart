@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:football_platform/features/blogs/presentation/pages/blogs_page.dart';
 import 'package:football_platform/features/quiz/presentation/pages/choose_level_page.dart';
-import 'package:football_platform/shared/components/components.dart';
+import 'package:football_platform/core/componants/components.dart';
 
 class AboutFootBallPage extends StatelessWidget {
   final List<String> imagePaths = [

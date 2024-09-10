@@ -9,7 +9,4 @@ class MenuItem {
   final String text;
   final Image? icon;
 }
-class MenuItems{
 
-
-}

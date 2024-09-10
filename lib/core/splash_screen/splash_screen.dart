@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:football_platform/modules/home/home_screen.dart';
-import 'package:football_platform/shared/components/background.dart';
+import 'package:football_platform/core/componants/background.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:package_info_plus/package_info_plus.dart';

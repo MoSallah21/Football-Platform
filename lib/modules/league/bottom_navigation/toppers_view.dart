@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:football_platform/models/league_models/player_stats.dart';
+import 'package:football_platform/features/news/data/models/league_models/player_stats.dart';
 import 'package:football_platform/modules/league/state_management/leagues_cubit.dart';
 import 'package:football_platform/modules/league/state_management/leagues_status.dart';
 
