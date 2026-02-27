@@ -5,13 +5,13 @@ import 'package:football_platform/features/quiz/data/models/question_model.dart'
 abstract class QuizRemoteDatasource{
   Future<List<QuestionModel>> getAllQuestions(int level);
 }
-final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+final FirebaseFirestore fireStore = FirebaseFirestore.instance;
 final String QUESTION_COLLECTION='questions';
 class QuizRemoteDatasourceImp extends QuizRemoteDatasource{
   @override
   Future<List<QuestionModel>> getAllQuestions(int level) async {
     try{
-      final query= await _firestore
+      final query= await fireStore
           .collection(QUESTION_COLLECTION)
           .where('level', isEqualTo: level)
           .get();

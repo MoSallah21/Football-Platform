@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="football_platform"
+        android:label="MoFootball"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

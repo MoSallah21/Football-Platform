@@ -51,4 +51,21 @@ class PredictResultEvent extends PredictEvent{
         required this.awayCorners,
         required this.awayChances});
 }
+class SelectHomeTeamEvent extends PredictEvent {
+  final String teamCode;
+
+   SelectHomeTeamEvent({required this.teamCode});
+
+  @override
+  List<Object> get props => [teamCode];
+}
+
+class SelectAwayTeamEvent extends PredictEvent {
+  final String teamCode;
+
+   SelectAwayTeamEvent({required this.teamCode});
+
+  @override
+  List<Object> get props => [teamCode];
+}
 

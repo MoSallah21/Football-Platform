@@ -10,6 +10,6 @@ class FetchLiveMatchesDataUseCase{
   FetchLiveMatchesDataUseCase(this.repository);
 
   Future<Either<Failure,LiveMatchData>> call (int fixtureId) async
-  => await repository.fetchLiveMatchData(fixtureId);
+  => await repository.getLiveMatchData(fixtureId);
 
 }

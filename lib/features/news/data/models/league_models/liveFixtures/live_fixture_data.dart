@@ -1,5 +1,3 @@
-
-
 import '../team.dart';
 
 class LiveMatchData {
@@ -9,7 +7,7 @@ class LiveMatchData {
 
   List<Event> allEvent = [];
   late LineUps lineUps;
-  late TeamStatistics fixStats;
+  TeamStatistics? fixStats;
   getAllEvent(List<dynamic> events) {
     allEvent = events.map((dynamic e) => Event.fromJson(e)).toList();
     //  boolEvent = true;

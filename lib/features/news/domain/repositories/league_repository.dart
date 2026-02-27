@@ -10,13 +10,19 @@ abstract class LeagueRepository {
 
   Future<Either<Failure,List<PlayerStats>>> getTopScorers(String leagueId);
 
+  Future<Either<Failure,List<PlayerStats>>> getTopAssists(String leagueId);
+
   Future<Either<Failure,List<FixtureData>>> getUpcomingMatches(String leagueId);
 
   Future<Either<Failure,List<FixtureData>>> getLiveMatches(String leagueId);
 
   Future<Either<Failure,List<FixtureData>>> getAllMatches(String leagueId);
 
-  Future<Either<Failure,LiveMatchData>> fetchLiveMatchData(int fixtureId);
+  Future<Either<Failure,LiveMatchData>> getLiveMatchData(int fixtureId);
+
+  Future<Either<Failure,List<PlayerStats>>> getYellowCards(String league);
+
+  Future<Either<Failure,List<PlayerStats>>> getRedCards(String league);
 
 
 }

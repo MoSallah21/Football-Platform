@@ -1,5 +1,6 @@
 part of 'quiz_bloc.dart';
 
+
 abstract class QuizEvent extends Equatable {
   const QuizEvent();
 
@@ -25,6 +26,30 @@ class SelectAnswerEvent extends QuizEvent {
   List<Object?> get props => [answer];
 }
 
-class NextQuestionEvent extends QuizEvent {}
+class NextQuestionEvent extends QuizEvent {
+  const NextQuestionEvent();
+}
 
-class TimerTickEvent extends QuizEvent {}
+class TimerTickEvent extends QuizEvent {
+  const TimerTickEvent();
+}
+
+class ResetQuizEvent extends QuizEvent {
+  const ResetQuizEvent();
+}
+
+class PauseQuizEvent extends QuizEvent {
+  const PauseQuizEvent();
+}
+
+class ResumeQuizEvent extends QuizEvent {
+  const ResumeQuizEvent();
+}
+
+class SkipQuestionEvent extends QuizEvent {
+  const SkipQuestionEvent();
+}
+
+class QuizCompletedEvent extends QuizEvent {
+  const QuizCompletedEvent();
+}

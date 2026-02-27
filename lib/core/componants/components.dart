@@ -145,8 +145,8 @@ Widget actionButton({
     width: 200,
     child: ElevatedButton(
       style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(buttonColor),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        backgroundColor: WidgetStateProperty.all(buttonColor),
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(25.0), // Adjust border radius as needed
           ),
